@@ -55,7 +55,7 @@
         document.getElementById('security-link').innerText = translations[language].security;
         document.getElementById('security-description').innerText = translations[language].securityDesc;
     }
-
+//test
     document.getElementById('language-select').addEventListener('change', (event) => {
         updateLanguage(event.target.value);
         loadScheduleData(); // Загрузка расписания при смене языка
