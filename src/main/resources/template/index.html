@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransitPro </title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<header>
+    <h1 id="app-title">TransitPro</h1>
+    <nav>
+        <ul>
+            <li><a href="#schedule" id="schedule-link">Расписание</a></li>
+            <li><a href="#ticket" id="ticket-link">Покупка билета</a></li>
+            <li><a href="#booking" id="booking-link">Заказ билетов</a></li>
+            <li><a href="#security" id="security-link">Безопасность</a></li>
+            <li>
+                <select id="language-select">
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                    <option value="zh">中文</option>
+                </select>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<section id="schedule">
+    <h2 id="schedule-title">Расписание маршрутов</h2>
+    <p id="schedule-description">Здесь отображается актуальное расписание общественного транспорта.</p>
+    <div class="schedule-container" id="schedule-container">
+        <!-- Динамическое расписание будет загружаться сюда -->
+    </div>
+</section>
+
+<section id="ticket">
+    <h2 id="ticket-title">Покупка билета с помощью QR-кода</h2>
+    <button id="buy-ticket">Купить билет</button>
+    <div id="qr-code">
+        <!-- QR-код будет отображаться здесь -->
+    </div>
+</section>
+
+<section id="booking">
+    <h2 id="booking-title">Заказ билетов</h2>
+    <form id="booking-form">
+        <label for="route" id="route-label">Выберите маршрут:</label>
+        <select id="route">
+            <option value="route1">Маршрут 1</option>
+            <option value="route2">Маршрут 2</option>
+        </select>
+        <label for="seats" id="seats-label">Количество мест:</label>
+        <input type="number" id="seats" min="1" value="1" max="10">
+        <button type="submit">Забронировать</button>
+    </form>
+</section>
+
+<section id="security">
+    <h2 id="security-title">Безопасность</h2>
+    <p id="security-description">Ваши данные защищены с помощью современных методов шифрования и аутентификации.</p>
+</section>
+
+<footer>
+    <p>&copy; 2024 TransitPro "Умное приложение для общественного транспорта"</p>
+</footer>
+<script src="index.js"></script>
+</body>
+</html>

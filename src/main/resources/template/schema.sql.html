@@ -1,0 +1,31 @@
+-- Создание таблицы для маршрутов
+CREATE TABLE routes (
+id SERIAL PRIMARY KEY,
+name VARCHAR(255) NOT NULL,
+description TEXT
+);
+
+-- Создание таблицы для расписания
+CREATE TABLE schedule (
+id SERIAL PRIMARY KEY,
+route_id INT REFERENCES routes(id) ON DELETE CASCADE,
+time TIME NOT NULL,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Создание таблицы для заказов билетов
+CREATE TABLE ticket_bookings (
+id SERIAL PRIMARY KEY,
+route_id INT REFERENCES routes(id) ON DELETE CASCADE,
+number_of_seats INT NOT NULL,
+booked_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Создание таблицы для пользователей (если требуется)
+CREATE TABLE users (
+id SERIAL PRIMARY KEY,
+username VARCHAR(255) NOT NULL UNIQUE,
+password VARCHAR(255) NOT NULL,
+email VARCHAR(255) NOT NULL UNIQUE,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
